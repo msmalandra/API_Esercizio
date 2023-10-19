@@ -35,7 +35,9 @@ app.post("/api/recensione", inserimentoRec)
 const inserimentoUt = require("./controllers/Utente/inserimento");
 const cercatuttiUt = require("./controllers/Utente/cercatutti");
 const cercasingoloUt = require("./controllers/Utente/cercasingolo");
+const accessoUt = require("./controllers/Utente/accesso");
 
 app.post("/api/utente", inserimentoUt)
 app.get("/api/utente", cercatuttiUt)
 app.get("/api/utente/:id", cercasingoloUt)
+app.post("/api/login", accessoUt)
