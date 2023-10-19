@@ -3,8 +3,17 @@ import { RouterModule, Routes } from '@angular/router';
 import { RistoranteListaComponent } from './ristorante-lista/ristorante-lista.component';
 import { RistoranteInserisciComponent } from './ristorante-inserisci/ristorante-inserisci.component';
 import { RistoranteDettaglioComponent } from './ristorante-dettaglio/ristorante-dettaglio.component';
+import { LoginComponent } from './login/login.component';
 
 const routes: Routes = [
+  {
+    path: "",
+    component: LoginComponent
+  },
+  {
+    path: "login",
+    component: LoginComponent
+  },
   {
     path: "ristorante/lista",
     component: RistoranteListaComponent
@@ -12,11 +21,6 @@ const routes: Routes = [
   {
     path: "ristorante",
     redirectTo: "ristorante/lista"
-  },
-  {
-    path: "",
-    redirectTo: "ristorante/lista",
-    pathMatch: "full"
   },
   {
     path: "ristorante/dettaglio/:ristoranteId",
