@@ -4,4 +4,5 @@ export class Risultato {
     data: any;
     ristorante: any;
     recensione: any;
+    utenti: any;
 }

@@ -1,0 +1,25 @@
+const Utenti = require("../../models/Utenti")
+
+module.exports = async (req, res) => {
+    try {
+        let risultato = await Utenti.create({
+            id: req.body.id,
+            nome: req.body.nome,
+            cognome: req.body.cognome,
+            username: req.body.username,
+            password: req.body.password,
+            email: req.body.email,
+            status: req.body.status,
+        });
+
+        res.json({
+            status: "success",
+            data: ""
+        })
+    } catch (error) {
+        res.json({
+            status: "error",
+            data: error
+        })
+    }
+}
