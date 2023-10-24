@@ -28,6 +28,9 @@ export class LoginComponent {
         try {
           
             alert("Sei connesso")
+            window.sessionStorage.setItem('email', rist.email? rist.email : "")
+            window.sessionStorage.setItem('password', rist.password? rist.password : "")
+            
   
             this.router.navigateByUrl("ristorante/lista")
           
