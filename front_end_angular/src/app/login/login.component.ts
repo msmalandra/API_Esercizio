@@ -25,17 +25,15 @@ export class LoginComponent {
 
     this.service.accessaLogin(rist).subscribe(
       (risultato) => {
-        if (risultato.status == 'success') {
-          alert("Sei connesso")
-
-          this.router.navigateByUrl("ristorante/lista")
-        }
-        else
+        try {
+          
+            alert("Sei connesso")
+  
+            this.router.navigateByUrl("ristorante/lista")
+          
+        } catch (error) {
           alert("Errore")
-      },
-
-      (errore) => {
-        console.log(errore)
+        }
       }
     )
   }

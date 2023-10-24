@@ -9,12 +9,6 @@ module.exports = async (req, res) => {
             status: true,
         });
 
-        storage.setItem('email', email)
-        storage.setItem('password', password)
-        
-        console.log('item set:', storage.getItem('email'))
-        console.log('item set:', storage.getItem('password'))
-
         res.json({
             status: "success",
             data: "sei conesso"
