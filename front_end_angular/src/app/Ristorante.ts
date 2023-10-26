@@ -3,4 +3,6 @@ export class Ristorante {
     nome: string | undefined;
     indirizzo: string | undefined;
     tipoCucina: string | undefined;
+    email: string | undefined;
+    password: string | undefined;
 }

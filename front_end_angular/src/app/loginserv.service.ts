@@ -16,9 +16,13 @@ export class LoginservService {
 
   }
 
-  accessaLogin(objLg: Login) {
+  accessaLogin(objLg: Login) /*email: string, password: string)*/ {
 
-    var header_custom = new HttpHeaders();
+    //const base64Credentials = btoa(`${email}:${password}`);
+
+    var header_custom  = new HttpHeaders(
+      /*'Authorization', `Basic ${base64Credentials}`*/
+      );
     header_custom = header_custom.set('Content-Type', 'application/json');
 
     return this.http.post<Risultato>(this.endPointR, JSON.stringify(objLg), { headers: header_custom })
