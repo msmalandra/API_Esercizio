@@ -1,6 +1,7 @@
 const Recensione = require("../../models/Recensione")
 
 module.exports = async (req, res) => {
+    console.log(req.headers.authorization)
     try {
         let risultato = await Recensione.create({
             ristoranteId: req.body.ristoranteId,
