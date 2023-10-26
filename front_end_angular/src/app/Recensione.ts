@@ -5,4 +5,6 @@ export class Recensione {
     testo: string | undefined;
     voto: number | undefined;
     mediaVoti: number | undefined;
+    email: string | undefined;
+    password: string | undefined;
 }

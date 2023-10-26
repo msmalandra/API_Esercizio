@@ -22,6 +22,8 @@ export class RistoranteDettaglioComponent {
   varAutore: string | undefined;
   varTesto: string | undefined;
   varVoto: number | undefined;
+  varEmail: string | undefined;
+  varPassword: string | undefined;
 
   constructor(
     private service: RistoranteService,
@@ -64,8 +66,10 @@ export class RistoranteDettaglioComponent {
         rec.testo = this.varTesto;
         rec.voto = this.varVoto;
         rec.ristoranteId = ristId;
+        rec.email = this.varEmail;
+        rec.password = this.varPassword; 
 
-        this.service.inserisciRecensione(rec).subscribe(
+        this.service.inserisciRecensione(rec, rec.email!, rec.password!).subscribe(
           (risultato) => {
             if (risultato.status == 'success') {
               alert("Inserimento Avvenuto!!!")

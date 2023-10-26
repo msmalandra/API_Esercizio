@@ -23,7 +23,7 @@ export class LoginComponent {
     rist.password = this.varPassword;
 
 
-    this.service.accessaLogin(rist).subscribe(
+    this.service.accessaLogin(rist, rist.email!, rist.password!).subscribe(
       (risultato) => {
         try {
           
