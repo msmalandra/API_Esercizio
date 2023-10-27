@@ -11,7 +11,7 @@ module.exports = async (req, res) => {
 
         res.json({
             status: "success",
-            data: "sei conesso"
+            data: risultato._id
         })
     } catch (error) {
         res.json({

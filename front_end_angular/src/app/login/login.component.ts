@@ -9,8 +9,8 @@ import { Login } from '../Login';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  varEmail: string | undefined;
-  varPassword: string | undefined;
+  varEmail: string = "";
+  varPassword: string = "";
 
   constructor(private service: LoginservService, private router: Router) {
 
@@ -25,18 +25,17 @@ export class LoginComponent {
 
     this.service.accessaLogin(rist, rist.email!, rist.password!).subscribe(
       (risultato) => {
-        try {
-          
-            alert("Sei connesso")
-            window.sessionStorage.setItem('email', rist.email? rist.email : "")
-            window.sessionStorage.setItem('password', rist.password? rist.password : "")
-            
-  
-            this.router.navigateByUrl("ristorante/lista")
-          
-        } catch (error) {
-          alert("Errore")
+        if (risultato.status === "success") {
+          alert("Sei connesso");
+          window.sessionStorage.setItem('email', this.varEmail);
+          window.sessionStorage.setItem('password', this.varPassword);
+          this.router.navigateByUrl("ristorante/lista");
+        } else {
+          alert("Errore");
         }
+      },
+      (error) => {
+        alert("Errore nella richiesta");
       }
     )
   }
